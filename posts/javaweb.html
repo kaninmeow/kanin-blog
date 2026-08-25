@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaWeb 全栈教程 · KANIN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="scroll-progress" id="progress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-box" id="cursorBox">
+  <span class="corner tl"></span><span class="corner tr"></span>
+  <span class="corner bl"></span><span class="corner br"></span>
+  <span class="cursor-label" id="cursorLabel"></span>
+</div>
+<canvas id="bg"></canvas>
+<div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div>
+<div class="grid-overlay"></div><div class="noise"></div>
+
+<nav class="nav scrolled" id="nav">
+  <a href="../index.html" class="logo" data-magnetic data-label="回首页">KA<span>N</span>IN</a>
+  <div class="nav-links">
+    <a href="../index.html#blog" data-magnetic data-label="文章">文章</a>
+    <a href="../index.html#links" data-magnetic data-label="联系">联系</a>
+  </div>
+</nav>
+
+<article class="article">
+  <a href="../index.html#blog" class="back-link" data-magnetic data-label="返回列表">← 返回文章列表</a>
+  <header class="article-header" data-reveal>
+    <span class="post-tag">全栈开发</span>
+    <h1 class="article-title">JavaWeb 全栈教程</h1>
+    <div class="article-meta"><span>KANIN</span><span>· 约 86 分钟</span><span>· 微信公众号首发</span></div>
+  </header>
+  <div class="prose">
+<h2>HTML + CSS</h2>
+<h3>HTML介绍</h3>
+<p>html控制网站的结构， css控制网站的样式</p>
+<p>html超文本标记语言</p>
+<p>超文本： 超越了文本的限制， 比普通文本更强大。出了文字信息，还可以定义图片、音频、视频等</p>
+<p>标记语言：有标签 "<标签名>" 构成的语言</p>
+<p>html中标签都是预定义好的</p>
+<p>代码可以直接在浏览器中运行 html标签由浏览器解析</p>
+<h3>CSS 介绍</h3>
+<p>CSS：层叠样式表 用于控制页面的样式</p>
+<p>1.新建文本文件 后缀名为.html </p>
+<p>2.编写HTML的基本骨架 定义标题</p>
+<p>3.在<body>中填写内容</p>
+<p><haed>标签是用来定义网站的头部信息的 给浏览器看的 如CSS样式</p>
+<p><body>是网页的主体 用来存放给用户看的信息 图片 文字视频等</p>
+<p><img>标签可以引入图片</p>
+<p><br :>可以进行换行</p>
+<p><b>和<strong>标签可以让文本加粗显示</p>
+<p><u>下划线</p>
+<p><i>斜线</p>
+<p><s>删除线</p>
+<p>text-indent属性设置首行缩进</p>
+<p>font-size属性设置字体大小</p>
+<p>font-family属性设置字体</p>
+<p>margin：设置居中显示</p>
+<p>line-height：设置行高</p>
+<p>&nbst是空格的实体字符</p>
+<p>&lt : <</p>
+<p>&gt : ></p>
+<pre data-lang="plain"><code>width: 50%;
+              /* 居中显示   */
+              margin: 0 auto;
+              /* 字体设置为宋体  */
+              font-family: "宋体";
+              /* 行距设置为2em; */
+              line-height: 2em;</code></pre>
+<p><img src = "img/1.png"></p>
+<h1>用于定义网站的几级标题</h1>
+<p>完整演示：</p>
+<pre data-lang="plain"><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;HELLO HTML&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;
+            HELLO HTML
+        &lt;/h1&gt;
+        &lt;img src = "img.png"&gt;
+        
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h3>语法特点</h3>
+<p>1.标签不区分大小写</p>
+<p>2.属性的值可以使用单引号也可以使用双引号</p>
+<p>3.语法结构较为松散 不严谨</p>
+<h3>解析特点</h3>
+<p>从上到下逐行解析</p>
+<h3>标题</h3>
+<p>标题标签从<h1> - <h6>没有<h7></p>
+<p><a>是一个超链接标签 其中里面有两个常见的属性：</p>
+<p>	href 表示链接地址</p>
+<p>	target 表示打开方式 _blank新窗口打开 _self在本窗口打开</p>
+<p>	默认就是_self</p>
+<p>如果只是显示内容可以不用加任何标签直接输入文字就可以</p>
+<h3>css的引入方式</h3>
+<p>行内样式：写在标签的style属性中 配合javascript使用</p>
+<p>	使用<span>标签包裹起来 这个标签是没有任何意义的只是将内容包裹起来 在里面使用style属性指定字题颜色</p>
+<p><span style="color:slategray">2025年1月1日</span></p>
+<p>内部样式：写在style标签中 （可以写在页面任何位置 但是通常写在head中）</p>
+<pre data-lang="plain"><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;HELLO HTML&lt;/title&gt;
+        &lt;style&gt;
+            span{
+                color:red; 
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;【学习新思想 整座新青年】&lt;/h1&gt;
+        &lt;a href = "cctv.com" target="_blank"&gt;央视网&lt;/a&gt;
+        &lt;span&gt;2025年1月1日&lt;/span&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>外部样式：写在一个单独的.css文件中 通过link标签在网页中引入</p>
+<p> <link rel="stylesheet" href="img\css\news.css"></p>
+<p>	link标签中的两个属性</p>
+<p>		rel：引入的样式</p>
+<p>		href：表示引入的地址</p>
+<p>可以使用text-decoration:none标签去除超链接下面的下划线</p>
+<h3>颜色的表示形式</h3>
+<h3>CSS选择器</h3>
+<p>CSS选择器书用来选取需要设置样式的元素（标签）的</p>
+<pre data-lang="plain"><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;HELLO HTML&lt;/title&gt;
+        &lt;style&gt;
+            span1{
+                color:red; 
+            }
+            .cla {
+                color:blue;
+                size : 500px;
+            }
+            #id {
+                color:green;
+            }
+        &lt;/style&gt;
+        &lt;link rel="stylesheet" href="img\css\news.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;【学习新思想 整座新青年】&lt;/h1&gt;
+        &lt;a href = "cctv.com" target="_blank"&gt;央视网&lt;/a&gt;
+        &lt;span1&gt;我是元素选择器&lt;/span1&gt;
+        &lt;span .clss = "cla"&gt;我是类选择器&lt;/span&gt;
+        &lt;span id = "id"&gt;我是id选择器&lt;/span&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>三种选择器的优先级：</p>
+<p>	ID选择器>类选择器>元素选择器</p>
+<h3>video标签</h3>
+<p>src：视频地址</p>
+<p>controls: 显示播放控件</p>
+<p>autoplay：自动播放 </p>
+<p>widh: 视频宽度</p>
+<p>height：视频高度、</p>
+<p>	单位：</p>
+<p>		px：像素</p>
+<p>		%：百分比 相对于父元素的百分比</p>
+<h3>p段落引入标签</h3>
+<p>段落引入标签 使用p标签可以将一段文字包裹起来 </p>
+<h3>img图片</h3>
+<p>属性;</p>
+<p>	src:图片的访问地址</p>
+<p>		绝对路径 不推荐</p>
+<p>		行对路径</p>
+<p>			./ 当前目录 可以省略</p>
+<p>			../ 上一级目录</p>
+<p>	width: 宽度</p>
+<p>	heigth： 高度</p>
+<h3>盒子模型</h3>
+<p>页面中所有的元素 都可以看作一个盒子 由盒子将页面中的元素包含在一个矩形区域内 通过盒子的视角更方便的进行页面布局</p>
+<p>盒子模型组成： 内容区域(content)、内边距区域(padding)、边框区域(border)、边外据区域(margin</p>
+<p>)</p>
+<p>布局标签：网页开发中 会使用div和span这两个没有语义的布局标签</p>
+<p>div标签</p>
+<p>	一行显示一个</p>
+<p>	宽度默认是父元素的宽度 高度由内容撑开</p>
+<p>	可以设置宽高</p>
+<p>span标签</p>
+<p>	一行可以显示多个</p>
+<p>	宽度和高度默认由内容撑开</p>
+<p>	不可以设置宽高</p>
+<pre data-lang="plain"><code>div {
+    width : 200px;/*设置宽度*/
+    heigth : 200;/*设置高度*/
+    background-color : #05a012d; 设置背景色
+    padding : 20px 20px 20px 20px; 内边距
+    border : 20px solid #a23222;边框
+    margin : 20px 20px 20px 20px;外边距
+    /*方位分别是上右下左 顺时针*/
+}</code></pre>
+<h3>弹性布局 flex</h3>
+<p>是flexible Box的缩写 是一种给一维的布局模型 可以为元素之间提供强大的空间布局和对其能力</p>
+<p>通过给服了容器添加flex的想过属性 来控制族元素的位置和排列方式</p>
+<h3>表单标签</h3>
+<p>在网页中主要负责数据采集 如注册登录等数据采集</p>
+<p>标签：<form></p>
+<p>表单项：</p>
+<p>	<input>: 定义表单项 通过type属性控制输入的形式（rext/password/...）</p>
+<p>		设置type属性为submit是为提交按钮</p>
+<p>	<select>: 定义下拉列表</p>
+<p>	<textarea>: 定义文本域 长文本</p>
+<p>属性：</p>
+<p>	action：规定当提交表单时向何处发送表单数据URL</p>
+<p>	method: 规定用于发送数据的方式 GET、POST</p>
+<p>表单项想要提价数据必须设置name属性 表示表单项的名字</p>
+<h3>table表格展示数据</h3>
+<h4>thead表头</h4>
+<p><tr>用来定义行的</p>
+<p><th>用来定义表头单元格</p>
+<h4>tbody 表格主题内容</h4>
+<p><td>用来定义普通单元格</p>
+<h2>JavaScript</h2>
+<p>负责网页的行为 交互效果</p>
+<p>是一门跨平台 面向对象的脚本语言 是用来控制网页行为 实现网页的交互效果</p>
+<p>组成：</p>
+<p>	ECMAscript：规定了JS基础语法核心只是 包括变量 数据类型 流程控制 函数 对象等</p>
+<p>BOM：浏览器对象模型 用于操作浏览器本身 页面弹窗 地址栏操作 关闭窗口等</p>
+<p>DOM：文档对象模型 用于操作HTML文档 例如高边标签内的内容 改变标签内字体样式等</p>
+<h3>引入方式</h3>
+<p>内部脚本：将JS代码定义在HTML页面中</p>
+<p>	JS代码必须位于<script></script> 标签之间</p>
+<p>	在HTML文档中 可以在任意地方 防止任意数量的<script></p>
+<p>	一般会把脚本放在<body>元素的底部 可与i改善显示速度</p>
+<p>外部脚本：将JS脚本放在外部jS文件中 然后引入到HTML界面中</p>
+<p><script src = "demo.js"><script></p>
+<h3>变量&常量</h3>
+<p>JS中用let关键字声明白能量 （弱类型语言 变量可以存放不同类型的数据）</p>
+<p>变量名命名规则：</p>
+<p>	只能用数字、字母、下划线、美元符号组成， 数字不能开头</p>
+<p>	变量名严格区分大小写</p>
+<p>	不能使用关键字</p>
+<p>JS中使用const声明常量</p>
+<p>一旦声明 常量的值不可以改变 不可以重新赋值</p>
+<p>早期可以使用var声明变量但是不推荐 会提升变量的作用域</p>
+<h4>数据类型</h4>
+<h5>基本数据类型</h5>
+<p>number:数字</p>
+<p>boolean：布尔类型 true false</p>
+<p>null 对象为空</p>
+<p>undefined: 声明的变量没有初始化是 的默认值</p>
+<p>string： 字符串 单引号 双引号 反引号 都可以</p>
+<p>使用typeof运算符可以获取数据类型</p>
+<p>typeof a</p>
+<h5>模板字符串</h5>
+<p>反引号引起来的字符串是模板字符串 内容拼接是使用${}包住变量</p>
+<p>alert(<code>你好世界${name}${age}</code>)</p>
+<h3>输出语句</h3>
+<p>可以使用alert()函数输出变量或常量的值 弹出框</p>
+<p>console.log也是输出到控制台</p>
+<p>document.write()可以直接将值i输出在body区域</p>
+<h3>函数</h3>
+<p>函数是被设计用来执行特定任务的代码块 方便程序的封装使用</p>
+<p>JS中通过关键字function定义 定义是不用指定类型 </p>
+<h4>具名函数</h4>
+<pre data-lang="plain"><code>function add(a, b) {
+    //执行 的代码
+    return a + b;
+}</code></pre>
+<p>直接通过函数名调用函数</p>
+<p>let result = add(10, 20);</p>
+<p>调用时的参数个数和形参是可以不一致的 建议保持一致</p>
+<h4>匿名函数</h4>
+<p>匿名函数是指一种没有名称的函数 可以通过函数表达式和箭头函数定义</p>
+<pre data-lang="plain"><code>//函数表达式
+let add = function(a, b) {
+    return a + b;
+}
+//箭头函数
+let add = (a + b) =&gt; {
+    return a + b;
+}</code></pre>
+<p>调用时 可以通过变量名直接调用</p>
+<p>let result = add(10, 20);</p>
+<h3>自定义对象</h3>
+<p>定义格式：</p>
+<pre data-lang="plain"><code>let 对象名 = {
+    属性名: 属性值,
+    属性名: 属性值,
+    属性名: 属性值,
+    方法名: function (形参列表) { }//: function可以省略
+    方法名(形参列表) {}
+}</code></pre>
+<p>this：和java中的this一致 表示当前对象</p>
+<p>在对象里面的函数不要使用箭头函数</p>
+<p>调用格式：</p>
+<pre data-lang="plain"><code>对象名.属性名;
+对象名.方法名();</code></pre>
+<h3>json</h3>
+<p>对象标记法 JS对象标记法书写的文本</p>
+<p>由于语法简单层次结构鲜明 现在用于数据载体 在网络中进行数据传输 </p>
+<p>所有的key必须使用双引号引起来 值如果是字符串也要使用双引号引起来</p>
+<p>JS中提供了JSON对象</p>
+<p>JSON.stringify(...)可以将JS中的对象转成JSON</p>
+<p>let jsonString = JSON.stringify(person);</p>
+<p>JSON.parse(..)可以将JSON转换成JS中的对象</p>
+<h3>DOM</h3>
+<p>文档对象模型</p>
+<p>将标记语言的各个组成部分封装为对应的对象：</p>
+<p>	Document：整个文档的对象</p>
+<p>	Element：元素对象</p>
+<p>	Attribute：属性对象		</p>
+<p>	Text：文本对象</p>
+<p>	Comment：注释对象</p>
+<p>通过DOM 可以对HTML进行操作：</p>
+<p>	改变HTML元素的内容</p>
+<p>	改变HTML元素的样式</p>
+<p>	对HTML DOM事件做出反应</p>
+<p>	添加和删除HTML元素</p>
+<h4>操作</h4>
+<p>核心思想 ：把页面中的所有元素都当成对象处理（标签的所有属性在该对象上都可以找到</p>
+<p>操作步骤：</p>
+<p>	获取操作的DOM对象</p>
+<p>	操作DOM对象的属性或方法</p>
+<p>获取DoM对象</p>
+<p>	根据CSS选择器来获取元素 获取匹配到的第一个元素 ：document.querySelector('选择器')</p>
+<p>	根据CSS选择器来获取DOM元素 获取匹配到的所有元素：document.querySelectorALL('选择器')</p>
+<p>	注意：得到的是一个NodeList节点集合 是一个伪数组（有长度 有索引的数组）</p>
+<h3>事件监听</h3>
+<p>HTML时间是发生在HTML元素上的 事情 比如：</p>
+<p>	按钮被点击</p>
+<p>	鼠标移动到元素上</p>
+<p>	按下键盘按钮</p>
+<p>事件监听：Javascript可以在时间出发时 就立刻调用一个函数做出响应 也叫 时间绑定或注册时间</p>
+<p>语法：</p>
+<p>事件源.addEventListener('事件类型', 事件触发时执行的函数)；	</p>
+<p>事件监听三要素：</p>
+<p>	事件源：哪个dom出发触发了该事件 要获取dom元素</p>
+<p>	事件类型：用什么方式触发 比如鼠标单击 click</p>
+<p>	事件触发执行的函数：要做什么事</p>
+<h4>常见事件</h4>
+<p>鼠标事件</p>
+<p>	click：鼠标单击</p>
+<p>	mouseenter：鼠标移入</p>
+<p>	mouseleave：鼠标移出</p>
+<p>键盘事件</p>
+<p>	keydown：键盘按下时触发</p>
+<p>	keyup：键盘抬起时触发</p>
+<p>焦点事件</p>
+<p>	focus：获得焦点触发</p>
+<p>	blur：失去焦点时触发</p>
+<p>表单事件</p>
+<p>	input：用户输入时触发</p>
+<p>	bubmit：表单提交时触发</p>
+<h2>Vue3</h2>
+<p>是一个用于构架用户界面的渐进式Javascript框架</p>
+<p>框架：就是一个完整的项目解决方案 用于快速构建项目</p>
+<p>优点：大大提升了前端项目的开发效率</p>
+<p>缺点：需要理解记忆框架的使用规则</p>
+<p>基于数据渲染出用户看到的页面 数据驱动试图</p>
+<h3>准备</h3>
+<p>引入Vue模块</p>
+<pre data-lang="plain"><code>&lt;script type="module"&gt;
+        import{createApp}from'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+    &lt;/script&gt;</code></pre>
+<p>创建Vue程序的应用实例 控制视图的元素</p>
+<p>准备元素(div) 被Vue控制</p>
+<pre data-lang="plain"><code>&lt;div id = "app"&gt;
+        &lt;h1&gt;{{message}}&lt;/h1&gt;
+        
+    &lt;/div&gt;
+        
+    &lt;script type="module"&gt;
+        import{createApp}from'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        createApp({
+             data() {
+                 return {
+                     message: "helloword"
+                 }
+             }   
+        }).mount('#app')
+    &lt;/script&gt;</code></pre>
+<h4>数据驱动视图</h4>
+<p>准备数据</p>
+<p>	data返回的数据就是数据</p>
+<p>通过插值表达式渲染页面</p>
+<h3>常用指令</h3>
+<p>HTML标签上带有v-标签的特殊属性 不同的指令具有不同的涵义 可以实现不同的功能</p>
+<h2>Ajax</h2>
+<p>异步的JS和XML</p>
+<p>作用：</p>
+<p>	数据交换：通过Akax可以给服务器发送和请求 并获取服务器的数据</p>
+<p>	异步交互：可以在不重新加在整个也买你的情况下与服务器交换数据并更新部分为网页的技术 例如 搜索联想 用户名是否合法等</p>
+<h3>同步与异步交互区别</h3>
+<h3>AXIOS</h3>
+<p>对原生Ajax进行的封装 简化了书写 快速开发</p>
+<p>步骤;</p>
+<p>	引入Axios的JS文件</p>
+<p>	使用Axios发送请求 并获取响应结果</p>
+<pre data-lang="plain"><code>&lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+
+axios
+method:'GET'，
+url:'https://web-server.itheima.net/emps/list'
+）.then(（result）=&gt;{
+console.log(result.data);
+）.catch(（err）=&gt;{
+alert(err);
+）;</code></pre>
+<h2>Maven</h2>
+<p>是一款用于管理和构建java项目的工具时apach旗下的一个开源项目 基于项目对象模型PMOOM盖尼奥 通过一小段的描述信息管理项目的构建</p>
+<h3>作用</h3>
+<p>依赖管理</p>
+<p>	可以方便快捷的jar包</p>
+<p>项目构建</p>
+<p>	提供了一套标准化的跨平台的打包工具</p>
+<p>统一项目结构</p>
+<p>	不同的编译器目录结构是不一样的 不可以互相导入， maven提供了一套容易的项目结构</p>
+<h3>安装maven</h3>
+<p>1。解压</p>
+<p>2.配置本地仓库 修改conf/sittings.xml中的<localRepository>为一个指定目录</p>
+<p>3.配置阿里云私服：修改conf/settings.xml中的<mirrors>标签 添加如下标签</p>
+<pre data-lang="plain"><code>&lt;mirror&gt;
+&lt;id&gt;alimaven&lt;/id&gt;
+&lt;name&gt;aliyun maven&lt;/name&gt;
+&lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+&lt;mirrorof&gt;central&lt;/mirrorof&gt;
+&lt;/mirror&gt;</code></pre>
+<p>4.配置环境变量：MAVEN_HOME为maVen的解压目录，并将其bin目录加入PATH环境变量。</p>
+<h3>Maven坐标</h3>
+<p>坐标是资源的唯一标识。通过该坐标可以唯一定位资源的位置</p>
+<p>使用坐标来定义项目或引入项目中需要的依赖</p>
+<h4>坐标的组成</h4>
+<p>groupId：定义当前Maven项目隶属组织名称 通常是域名反写</p>
+<p>artifactId：定义当前maven项目的名称 通常是模块名称</p>
+<p>version：定义当前项目的版本号</p>
+<p>	SNAPSHOT：功能不稳定 处于开发解读那 快照版本</p>
+<p>	RELEASE：功能趋于稳定 当前停止更新 可以用于发行的版本</p>
+<h3>导入项目</h3>
+<p>方式-：File->ProjectStructure->Modules->ImportModule->选择maven项目的pom.xml。</p>
+<p>方式二:Maven面板->+（AddMavenProjects））->选择maven项目的pom.xml。</p>
+<h3>依赖管理</h3>
+<p>依赖：是指项目运行需要的jar包 一个项目中可以引入多个jar包</p>
+<h4>配置</h4>
+<p>在pom.xml中编写<dependency>标签</p>
+<p>在<dependencies>标签中 使用<dependency>引入坐标</p>
+<p>定义坐标的groupId, artifactId, version</p>
+<p>点击刷新按钮 引入最新加入的坐标</p>
+<pre data-lang="plain"><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;commons-io&lt;/groupId&gt;
+        &lt;artifactId&gt;commons-io&lt;/artifactId&gt;
+        &lt;version&gt;2.0&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre>
+<h5>排除依赖</h5>
+<p>指主动断开依赖的资源 被排除的资源无需指定版本 <exclusion></p>
+<h4>生命周期</h4>
+<p>就是为了对所有的maven项目构建过程进行抽象和统一</p>
+<p>maven中有三套相互独立的生命周期</p>
+<p>	clean：清理工作</p>
+<p>	default：核心工作 编译 测试 打包 安装 部署等</p>
+<p>	site：生成报告 发布站点等</p>
+<p>clean：移除上一次构建生成的文件compile：编译项目源代码test：使用合适的单元测试框架运行测试（junit）package：将编译后的文件打包，如：jar、war等install：安装项目到本地仓库</p>
+<p>在<strong>同一套</strong>生命周期内 当运行后面阶段是 前面的阶段都会运行</p>
+<h3>单元测试</h3>
+<p>测试是用来促进鉴定软件的正确性 完整性 安全性 和质量的过程</p>
+<p>阶段划分：单元测试、集成测试、系统测试、验收测试</p>
+<p>单元测试是对软件的基本组成进行测试 测试的最小单位</p>
+<p>测试方法：白盒测试、黑盒测试、灰盒测试</p>
+<h4>JUnit</h4>
+<p>是最流行的java测试框架之一 提供了一些功能 方便程序进行单元测试</p>
+<p>1.在pom.xml中引入junit依赖</p>
+<pre data-lang="plain"><code>&lt;dependency&gt;
+        &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+        &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+        &lt;version&gt;5.9.1&lt;/version&gt;
+        &lt;scope&gt;test&lt;/scope&gt;</code></pre>
+<p>2.在test/java目录下 创建测试类并编写对应的测试放大 并在方法上面声明@Test注解</p>
+<p>	注意：JUnit单元测试类名命名规范为：XxxxxTest【规范】。JUnit单元测试的方法，必须声明为pubLic Void【规定】。</p>
+<ol><li>运行单元测试 绿色成功 红色失败</li></ol>
+<h4>断言</h4>
+<h4>常见注解</h4>
+<h4>开发规范</h4>
+<p>原则：编写测试方法时 要尽可能包括所有的可能尤其是 边界数据</p>
+<h4>依赖范围</h4>
+<p>依赖的jar包，默认情况下，可以在任何地方使用。可以通过<scope>.</scope>设置其作用范围。</p>
+<h2>web基础</h2>
+<h3>springWeb入门</h3>
+<h4>创建步骤</h4>
+<p>1.创建springboot工程，并勾选给web开发相关依赖</p>
+<p>2.定义HelloController类 添加方法hello并添加注解</p>
+<p>	@RestController 表示当前类是个请求类</p>
+<p>	@RequestMapping("/hello") 表示请求路径</p>
+<p>springBoot创建时会自动创建一个启动类用注解@SpringBootApplication 表示</p>
+<h3>http协议</h3>
+<p>超文本传输协议，规定了浏览器和服务器之间数据传输的规则</p>
+<h4>特点</h4>
+<p>基于tcp协议 面向连接 安全</p>
+<p>基于请求-响应模型 一次请求对应一次相应</p>
+<p>是无状态的协议 对于事物处理没有记忆能力 每次请求响应都是独立的</p>
+<p>	缺点：多次请求之间不能共享诗句</p>
+<p>	有点：速度快</p>
+<h4>请求协议</h4>
+<p>1.请求行 </p>
+<p>	由三部分组成 请求方式 资源路径 协议</p>
+<p>GET /brand/findAll?name=OPP0&status=1 HTTP/1.1</p>
+<p>2.请求头</p>
+<p>	第二行开始 格式：key: value</p>
+<p>Accept:text/html,application/xhtml+xml,application/xmlq=0.9,image/avif,image/webp,image/apng,*/•Accept-Encoding:gzip,deflate，br•Accept-Language:zh-CN,zh;g=0.9•Host:1oca1host:8080•User-Agent:Mozi1la/5.0（Windows NT 10.0;Win64;x64)AppleWebkit/537.36（KHTML,1ike Gecko)Chrome/..</p>
+<p><strong>常见的key：</strong></p>
+<p>Host	请求的主机名User-Agent	浏览器版本，例如Chrome浏览器的标识类似Mozilla/5.0。。。Chrome/79，IE浏览器的标识类似Mozilla/5.0(Windows NT ...） like GeckoAccept	表示浏览器能接收的资源类型，如text/_，image/_或者_/_表示所有;Accept-Language	表示浏览器偏好的语言，服务器可以据此返回不同语言的网页；Accept-Encoding	表示浏览器可以支持的压缩类型，例如gzip，deflate等。Content-Type	请求主体的数据类型。Content-Length	请求主体的大小（单位：字节）。</p>
+<p>3.请求体</p>
+<p>	POST请求 存放请求参数</p>
+<p>{"status":1, "brandName":"黑马", "companyName”, "description"："黑马程序员"}</p>
+<h4>获取请求</h4>
+<p>Web服务器（Tomcat）对HTTP协议的请求数据进行解析，并进行了封装（HttpServletRequest），在调用Controller方法的时候传递给了该方法。这样，就使得程序员不必直接对协议进行操作，让Web开发更加便捷。</p>
+<pre data-lang="plain"><code>//获取请求方式
+        String method = request.getMethod();
+        System.out.println(method);
+        //获取请求的url地址
+        String url = request.getRequestURL().toString();
+        System.out.println(url);
+        String uri = request.getRequestURI();//资源路径
+        System.out.println(uri);
+        //获取请求的协议
+        String protocol = request.getProtocol();
+        System.out.println(protocol);
+        //获取请求的参数
+        String name = request.getParameter("name");
+        String age = request.getParameter("age");
+        System.out.println(name);
+        System.out.println(age);
+        //获取请求头 Accept
+        request.getHeader("Accept");</code></pre>
+<h4>响应数据</h4>
+<p>1.相应行 响应数据第一行（协议、状态码、描述）</p>
+<p>HTTP/1.1 200 OK</p>
+<p>2.响应头 第二行开始 key: value</p>
+<pre data-lang="plain"><code>Content-Type:application/json
+Transfer-Encoding:chunked
+Date:Tue,10May 202207:51:07GMT
+Keep-Alive:timeout=60
+Connection:keep-alive</code></pre>
+<p>3.响应体 最后一部分 存放响应的数据</p>
+<p>[{id：1，brandName：“阿里巴巴"，companyName：“腾讯计算机系统有限公司"，description：“玩玩玩"}]</p>
+<h5>状态码</h5>
+<p>1xX 响应中-临时状态码，表示请求已经接收，告诉客户端应该继续请求或者如果它已经完成则忽略它。2xx 成功-表示请求已经被成功接收，处理已完成。3xx 重定向-重定向到其他地方；让客户端再发起一次请求以完成整个处理。4XX 客户端错误一处理发生错误，责任在客户端。如：请求了不存在的资源、客户端未被授权、禁止访问等。5xx 服务器错误一处理发生错误，责任在服务端。如：程序抛出异常等。</p>
+<h5>响应头内容</h5>
+<p>Content-Type	表示该响应内容的类型，例如text/html，application/json。Content-Length	表示该响应内容的长度（字节数）。Content-Encoding	表示该响应压缩算法，例如gzip。Cache-Control	指示客户端应如何缓存，例如max-age=300表示可以最多缓存300秒。Set-Cookie	告诉浏览器为当前页面所在的域设置cookie。</p>
+<h4>响应数据设置</h4>
+<p>Web服务器对HTTP协议的响应数据进行了封装（HttpServletResponse），并在调用Controller方法的时候传递给了该方法。这样，就使得程序员不必直接对协议进行操作，让Web开发更加便捷。</p>
+<p>响应状态码和响应头如果没有特殊要求的话，通常不手动设定。服务器会根据请求处理的逻辑，自动设置响应状态码和响应头。</p>
+<h5>通过HttpServletR	esponse设置响应数据</h5>
+<pre data-lang="plain"><code>@RequestMapping("response")
+    public void response(HttpServletResponse response) throws IOException {
+        //设置响应状态码
+        response.setStatus(200);
+        //设置响应头
+        response.setHeader("name", "kanin");
+        //设置响应体
+        response.getWriter().write("&lt;h1&gt;hello&lt;/h1&gt;");
+    }</code></pre>
+<h5>通过ResponseEntity 对象 spring提供的</h5>
+<pre data-lang="plain"><code>@RequestMapping("response2")
+    public ResponseEntity&lt;String&gt; response2() {
+        return ResponseEntity.status(200).
+                header("name", "kanin").
+                body("&lt;h1&gt;hello&lt;/h1&gt;");
+    }</code></pre>
+<h4>spring案例</h4>
+<p>1.准备工作：	创建一个SpringBoot工程，并勾选web依赖、Lombok。	引入资料中准备好的用户数据文件（user.txt），及前端静态页面。	定义一个实体类，用来封装用户信息2.开发服务端程序，接收请求，读取文本数据并响应。</p>
+<h3>分层解耦</h3>
+<h4>三层架构</h4>
+<p>controller:控制层 接受前端发送的请求 对请求进行处理 并响应数据</p>
+<pre data-lang="plain"><code>@RestController
+public class UserCroller {
+
+    @RequestMapping("/list")
+    public List&lt;user&gt; list() throws FileNotFoundException {
+        //3.返回数据 转换为json格式
+        return new UserSeraviceImpl().findAll();
+    }
+}</code></pre>
+<p>service: 业务逻辑层 处理具体的业务逻辑</p>
+<pre data-lang="plain"><code>public class UserSeraviceImpl implements UserService {
+    private UserDao userdao = new UserDaoImpl();
+    @Override
+    public List&lt;user&gt; findAll() throws FileNotFoundException {
+        List&lt;String&gt; lines = userdao.findAll();
+        //2.解析用户数据 封装为User对象 -》 list集合
+        List&lt;user&gt; userList = lines.stream().map(line -&gt; {
+            String[] part = line.split(",");
+            Integer id = Integer.parseInt(part[0]);
+            String username = part[1];
+            String password = part[2];
+            String name = part[3];
+            Integer age = Integer.parseInt(part[4]);
+            LocalDateTime updateTime = LocalDateTime.parse(part[5], DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+            return new user(id, username, password, name, age, updateTime);
+        }).toList();
+
+        return userList;
+    }
+}</code></pre>
+<p>dao：数据访问层 负责数据访问操作 包括数据的增删改查</p>
+<pre data-lang="plain"><code>public class UserDaoImpl implements UserDao {
+
+    @Override
+    public List&lt;String&gt; findAll() throws FileNotFoundException {
+        //1加载并读取user.txt文件获取用户数据
+        FileInputStream in = new FileInputStream(new File("src/main/resources/user.txt"));
+        ArrayList&lt;String&gt; lines = IoUtil.readLines(in, StandardCharsets.UTF_8, new ArrayList&lt;&gt;());
+        return lines;
+    }
+}</code></pre>
+<h3>ico和id</h3>
+<p>耦合：衡量软件这种各个层/模块的依赖关联程度</p>
+<p>内聚：软件中各个功能模块内部功能的联系</p>
+<p>控制反转：IOC 对象的创建控制权交给程序本身转移到外部 这种思想成为控制反转</p>
+<p>依赖注入：ID 容器为应用程序提供运行时所依赖的资源 成为依赖注入</p>
+<p>Bean对象：IOC容器创建、管理的对象成为Bean</p>
+<p>在Dao以及Service层的实现类上添加@Component 注解 表示将这个类的对象交给IOC容器管理</p>
+<p>在Controller以及service对象创建IOC对象的上方添加@Autowired 注解</p>
+<p>要把某个对象交给IOC容器管理，需要在对应的类上加上如下注解之一：注解说明位置@Component声明bean的基础注解不属于以下三类时，用此注解@Controllera	Component的衍生注解标注在控制层类上@Servicea	Component的衍生注解标注在业务层类上@Repositorya	Component的衍生注解标注在数据访问层类上（由于与mybatis整合，用的少）</p>
+<p>生命bean是 可以通过注解的value属性指定bean的名字 如果没有指定默认为类名首字母小写</p>
+<p>前面声明bean的四大注解，要想生效，还需要被组件扫描注解@ComponentScan扫描。该注解虽然没有显式配置，但是实际上已经包含在了启动类声明注解@SpringBootApplication中，默认扫描的范围是启动类所在包及其子包。</p>
+<p>使用@Autowired进行依赖注入的常见方式:</p>
+<p>1.属性注入</p>
+<pre data-lang="plain"><code>@RestController
+public class UserController {
+    @Autowired
+    private UserService userService;
+    //....
+}</code></pre>
+<p>2.构造器注入</p>
+<pre data-lang="plain"><code>@RestController
+public class UserController {
+    private final UserService userService;
+    @AutowiredN
+    public UserController(UserService userService） {
+        this.userService = userService;
+    }
+}</code></pre>
+<p>3.setter注入</p>
+<pre data-lang="plain"><code>@RestController
+public class UserController {
+    private UserService userService;
+    @Autowired
+    public void setUserService(UserService userService） {
+        this.userService = userService;
+    }
+}</code></pre>
+<p>@Autowired注解 默认是按照类型进行注入的</p>
+<p>如果存在多个想通过类型的bean会报错， 解决方案如下：</p>
+<p>	1.@Primary</p>
+<pre data-lang="plain"><code>@Primary
+@Service
+public class UserServiceImpl implements UserService {
+    @Override
+    public List&lt;User&gt; list(){
+        //省略... 
+    }
+}</code></pre>
+<p>	2.@Qualifier</p>
+<pre data-lang="plain"><code>@RestController
+public class UserController {
+    @Autowired
+    @Qualifier("userServiceImpl")
+    private UserService userService;
+}</code></pre>
+<p>	3.@Resource</p>
+<pre data-lang="plain"><code>@RestController
+public class UserController {
+    @Resource(name = "userServiceImpl")
+    private UserService userService;
+}</code></pre>
+<h2>mySql</h2>
+<p>数据库：DB 是存储和管理数据的仓库</p>
+<p>数据库管理系统：DBMS 操纵和管理数据库的大型软件</p>
+<p>SQL：操作关系型数据库的编程语言 定义了一套操作的统一标准</p>
+<h3>安装MySql</h3>
+<p>初始化:</p>
+<p>mysqld --initialize-insecure</p>
+<p>注册MySql服务：</p>
+<p>mysqld -install</p>
+<p>启动MySql</p>
+<pre data-lang="plain"><code>net start mysql  // 启动mysql服务
+    
+net stop mysql  // 停止mysql服务</code></pre>
+<p>修改账户名密码：</p>
+<p>mysqladmin -u root password 1234</p>
+<p>登录：</p>
+<p>mysql -uroot -p1234</p>
+<p>退出:</p>
+<p>exit</p>
+<p>登录参数：</p>
+<p>mysql -u用户名 -p密码 -h要连接的mysql服务器的ip地址(默认127.0.0.1) -P端口号(默认3306)</p>
+<h3>数据模型</h3>
+<p>关系型数据库：建立在关系模型基础上 由多张相互联系的二维表组成的数据库</p>
+<p>特点：使用表存储数据 格式统一 便于维护</p>
+<p>	使用SQL语言操作 标准统一 可用于复杂查询</p>
+<h3>SQL语句</h3>
+<p>SQL:是一个操作关系型数据库的编程语言 定义操作说有关系型数据库的统一标准</p>
+<p>分类：</p>
+<h4>DDL</h4>
+<p>数据库操作：</p>
+<pre data-lang="plain"><code>--查询所有数据库
+show databases;
+--查询当前数据库
+select database();
+--使用/切换数据库
+use数据库名；
+--创建数据库
+create database [if not exists] 数据库名 [default charset utf8mb4];
+-删除数据库
+drop database[if exists]数据库名;</code></pre>
+<p>SQL 不区分大小写</p>
+<p>表的操作：</p>
+<pre data-lang="plain"><code>create table tablename(
+
+    字段1 字段类型 [约束] [comment 字段1 注释]，
+    字段2 字段类型 [约束] [comment 字段2 注释】
+)[comment 表注释];
+                   
+create table user (
+    id int comment 'id, 主键',
+    username varchar(50) comment '用户名',
+    name varchar(50) comment '姓名',
+    age int comment '年龄',
+    gender char(1) comment '性别'
+)comment '用户信息表'</code></pre>
+<p>约束：是作用于表中字段上的规则 用于限制表中的数据 保证数据的正确性 完整性 有效性</p>
+<p>常见约束：</p>
+<pre data-lang="plain"><code>约束描述
+非空约束    限制该字段值不能为   nullnot null
+唯一约束    保证字段的所有数据都是唯一、不重复的  unique
+主键约束    主键是一行数据的唯一标识，要求非空且唯一    primary key
+默认约束    保存数据时，如果未指定该字段值，则采用默认值  default
+外键约束    让两张表的数据建立连接，保证数据的一致性和完整性    foreign key</code></pre>
+<h5>常见的数据类型</h5>
+<p>主要分为三类：数值型、字符串型、日期时间型.</p>
+<h6>数值型</h6>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left"><strong>类型</strong></th><th style="text-align:left"><strong>大小(byte)</strong></th><th style="text-align:left"><strong>有符号(SIGNED)范围</strong></th><th style="text-align:left"><strong>无符号(UNSIGNED)范围</strong></th><th style="text-align:left"><strong>描述</strong></th><th style="text-align:left"><strong>备注</strong></th></tr></thead><tbody><tr><td style="text-align:left">tinyint</td><td style="text-align:left">1</td><td style="text-align:left">(-128，127)</td><td style="text-align:left">(0，255)</td><td style="text-align:left">小整数值</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">smallint</td><td style="text-align:left">2</td><td style="text-align:left">(-32768，32767)</td><td style="text-align:left">(0，65535)</td><td style="text-align:left">大整数值</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">mediumint</td><td style="text-align:left">3</td><td style="text-align:left">(-8388608，8388607)</td><td style="text-align:left">(0，16777215)</td><td style="text-align:left">大整数值</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">int</td><td style="text-align:left">4</td><td style="text-align:left">(-2147483648，2147483647)</td><td style="text-align:left">(0，4294967295)</td><td style="text-align:left">大整数值</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">bigint</td><td style="text-align:left">8</td><td style="text-align:left">(-2<sup>63，2</sup>63-1)</td><td style="text-align:left">(0，2^64-1)</td><td style="text-align:left">极大整数值</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">float</td><td style="text-align:left">4</td><td style="text-align:left">(-3.402823466 E+38，3.402823466351 E+38)</td><td style="text-align:left">0 和 (1.175494351 E-38，3.402823466 E+38)</td><td style="text-align:left">单精度浮点数值</td><td style="text-align:left">float(5,2)：5表示整个数字长度，2 表示小数位个数</td></tr><tr><td style="text-align:left">double</td><td style="text-align:left">8</td><td style="text-align:left">(-1.7976931348623157 E+308，1.7976931348623157 E+308)</td><td style="text-align:left">0 和 (2.2250738585072014 E-308，1.7976931348623157 E+308)</td><td style="text-align:left">双精度浮点数值</td><td style="text-align:left">double(5,2)：5表示整个数字长度，2 表示小数位个数</td></tr><tr><td style="text-align:left">decimal</td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left"></td><td style="text-align:left">小数值(精度更高)</td><td style="text-align:left">decimal(5,2)：5表示整个数字长度，2 表示小数位个数</td></tr></tbody></table></div>
+<h6>字符串</h6>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left"><strong>分类</strong></th><th style="text-align:left"><strong>类型</strong></th><th style="text-align:left"><strong>大小</strong></th><th style="text-align:left"><strong>描述</strong></th></tr></thead><tbody><tr><td style="text-align:left">字符串类型</td><td style="text-align:left">char</td><td style="text-align:left">0-255 bytes</td><td style="text-align:left">定长字符串</td></tr><tr><td style="text-align:left">varchar</td><td style="text-align:left">0-65535 bytes</td><td style="text-align:left">变长字符串</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">tinyblob</td><td style="text-align:left">0-255 bytes</td><td style="text-align:left">不超过255个字符的二进制数据</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">tinytext</td><td style="text-align:left">0-255 bytes</td><td style="text-align:left">短文本字符串</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">blob</td><td style="text-align:left">0-65 535 bytes</td><td style="text-align:left">二进制形式的长文本数据</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">text</td><td style="text-align:left">0-65 535 bytes</td><td style="text-align:left">长文本数据</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">mediumblob</td><td style="text-align:left">0-16 777 215 bytes</td><td style="text-align:left">二进制形式的中等长度文本数据</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">mediumtext</td><td style="text-align:left">0-16 777 215 bytes</td><td style="text-align:left">中等长度文本数据</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">longblob</td><td style="text-align:left">0-4 294 967 295 bytes</td><td style="text-align:left">二进制形式的极大文本数据</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">longtext</td><td style="text-align:left">0-4 294 967 295 bytes</td><td style="text-align:left">极大文本数据</td><td style="text-align:left"></td></tr></tbody></table></div>
+<p><strong>备注</strong></p>
+<div class="table-wrap"><table><thead><tr><th></th><th style="text-align:left"><strong>优势</strong></th><th style="text-align:left"><strong>劣势</strong></th></tr></thead><tbody><tr><td>char(10): 固定占用10个字符空间; 存储A, 占用10个空间; 存储ABC, 占用10个空间;</td><td style="text-align:left">性能略高</td><td style="text-align:left">浪费磁盘空间</td></tr><tr><td>varchar(10): 最多占用10个字符空间; 存储A, 占用1个空间; 存储ABC, 占用3个空间;</td><td style="text-align:left">节约磁盘空间</td><td style="text-align:left">性能略低</td></tr><tr><td></td><td style="text-align:left"></td><td style="text-align:left"></td></tr><tr><td>username varchar(50)</td><td style="text-align:left"></td><td style="text-align:left"></td></tr><tr><td>idcard char(18)</td><td style="text-align:left"></td><td style="text-align:left"></td></tr><tr><td>phone char(11)</td><td style="text-align:left"></td><td style="text-align:left"></td></tr></tbody></table></div>
+<h6>日期时间</h6>
+<div class="table-wrap"><table><thead><tr><th style="text-align:left"><strong>分类</strong></th><th style="text-align:left"><strong>类型</strong></th><th style="text-align:left"><strong>大小(byte)</strong></th><th style="text-align:left"><strong>范围</strong></th><th style="text-align:left"><strong>格式</strong></th><th style="text-align:left"><strong>描述</strong></th></tr></thead><tbody><tr><td style="text-align:left">日期类型</td><td style="text-align:left">date</td><td style="text-align:left">3</td><td style="text-align:left">1000-01-01 至 9999-12-31</td><td style="text-align:left">YYYY-MM-DD</td><td style="text-align:left">日期值</td></tr><tr><td style="text-align:left">time</td><td style="text-align:left">3</td><td style="text-align:left">-838:59:59 至 838:59:59</td><td style="text-align:left">HH:MM:SS</td><td style="text-align:left">时间值或持续时间</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">year</td><td style="text-align:left">1</td><td style="text-align:left">1901 至 2155</td><td style="text-align:left">YYYY</td><td style="text-align:left">年份值</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">datetime</td><td style="text-align:left">8</td><td style="text-align:left">1000-01-01 00:00:00 至 9999-12-31 23:59:59</td><td style="text-align:left">YYYY-MM-DD HH:MM:SS</td><td style="text-align:left">混合日期和时间值</td><td style="text-align:left"></td></tr><tr><td style="text-align:left">timestamp</td><td style="text-align:left">4</td><td style="text-align:left">1970-01-01 00:00:01 至 2038-01-19 03:14:07</td><td style="text-align:left">YYYY-MM-DD HH:MM:SS</td><td style="text-align:left">混合日期和时间值，时间戳</td><td style="text-align:left"></td></tr></tbody></table></div>
+<h5>案例</h5>
+<pre data-lang="plain"><code>create table emp (
+    id int unsigned primary key  auto_increment comment 'id主键',
+    userName varchar(20) unique not null comment '用户名',
+    name varchar(10) unique comment '姓名',
+    gender tinyint unsigned unique comment '性别 1男 2女',
+    phone char(11) unique not null comment '手机号',
+    job tinyint unsigned comment '职位 1 班主任 2讲师 3学工主管 4教研主管 5咨询师',
+    salary int unsigned comment '薪资',
+    entry_date date comment '入职日期',
+    image varchar(255) comment '图像',
+    password varchar(32) default '123456' comment '密码',
+    create_time datetime comment '创建时间',
+    updata_time datetime comment '修改时间'
+) comment '员工表';</code></pre>
+<h5>查询修改删除</h5>
+<pre data-lang="plain"><code>show tables；--查询当前数据库的所有表
+desc 表名；--查询表结构
+show create table 表名;查询建表语句
+alter table表名 add 字段名类型（长度）[comment注释］[约束]；--添加字段
+alter table表名 modify 字段名新数据类型（长度）；--修改字段类型
+alter table表名 change 旧字段名新字段名类型（长度）[comment注释】[约束]；--修改字段名与字段类型
+alter table 表名 drop column 字段名;；--删除字段
+alter table 表名 rename to 新表名；；--修改表名
+drop table[if exists］表名；--删除表</code></pre>
+<h4>DML</h4>
+<p>DML操作的是数据的增删改</p>
+<h5>添加数据(INSERT)</h5>
+<pre data-lang="plain"><code>--指定字段添加数据
+insert into表名（字段名1，字段名2）values（值1，值2）;
+--全部字段添加数据
+insert into 表名 values（值1，值2，...）；
+--批量添加数据（指定字段）
+insert into 表名（字段名1，字段名2）values（值1，值2），（值1，值2）;
+--批量添加数据（全部字段）
+insert into 表名 values（值1，值2，·。。），（值1，值2，。。。）;</code></pre>
+<p>修改数据(UPDATE)</p>
+<pre data-lang="plain"><code>update 表明 set字段名1 = 值1, 字段名2 = 值2, ...[where 条件];</code></pre>
+<p>删除数据(DELETE)</p>
+<p>delete from 表名 [where 条件];</p>
+<h4>DQL</h4>
+<p>用来查询数据 关键字：select</p>
+<pre data-lang="plain"><code>select [distinct去掉重复]
+    字段列表
+from
+    表名列表
+where
+    条件列表
+group by
+    分组字段列表
+having
+    分组后条件列表
+order by
+    排序字段列表
+limit
+    分页参数</code></pre>
+<h5>运算符</h5>
+<pre data-lang="plain"><code>&gt;   大于
+&gt;=  大于等于
+&lt;   小于
+&lt;=  小于等于
+=   等于
+&lt;&gt;或！=   不等于
+between and     在某个范围之内(含最小、最大值)
+in(...)     在in之后的列表中的值，多选一
+like    占位符模糊匹配（_匹配单个字符，%匹配任意个字符）
+is null     是null
+
+//逻辑运算符
+and 或者 &amp;&amp;  并且
+or 或者 ||
+not 或者 !  非 不是</code></pre>
+<p><strong>聚合函数</strong></p>
+<p>可以将一列数据作为一个整体进行纵向计算</p>
+<p>所有的聚合函数不参与null计算</p>
+<pre data-lang="plain"><code>count(字段 * 常量 优先推荐使用*)  计数
+sum     求和
+max     最大值
+min     最小值
+avg     平均数</code></pre>
+<pre data-lang="plain"><code>-- 分组查询
+select 字段列表 from 表名 [where条件列表] group by 分组字段名 [having 分组后过滤条件];</code></pre>
+<p><strong>where和having的区别</strong></p>
+<pre data-lang="plain"><code>1.实行时机不同：where是在分组前进行过滤 不满足where条件 不参与分组 having是分组后进行结果过滤
+2.判断条件不同：where不能对聚合函数进行判断 但是having可以</code></pre>
+<p>注意：分组之后，select后的字段列表不能随意书写，能写的一般是分组字段+聚合函数；</p>
+<pre data-lang="plain"><code>--排序查询
+select 字段列表 from 表名 [where条件列表] [group by 分组字段名 having 分组后过滤条件] order by 排序字段 排序方式;
+-- asc:升序      desc：降序    默认是asc 可以不写</code></pre>
+<pre data-lang="plain"><code>--分页查询
+select 字段 from 表名 [where 条件] [group by 分组字段 having 过滤条件] [order by 排序字段] limit 起始索引,查询记录数;</code></pre>
+<h4>多表关系</h4>
+<p>项目开发中，在进行数据库表结构设计时，会根据业务需求及业务模块之间的关系，分析并设计表结构。由于业务之间相互关联，所以各个表结构之间也存在着各种联系。</p>
+<p>关系分为三种：</p>
+<h5>一对多</h5>
+<p>场景：部门和员工的关系（一个部门下有多个员工）</p>
+<p>实现：在多的一方添加一个字段 关联一的主键 这个字段是外键</p>
+<p>现象：部门数据可以直接删除，然而还有部分员工归属于该部门下，此时就出现了数据的不完整、不一致问题。原因：目前上述的两张表，在数据库层面，并未建立关联，所以是无法保证数据的一致性和完整性的。解决方案：外键约束。</p>
+<pre data-lang="plain"><code>--创建表时指定
+create table 表名(
+	字段名 数据类型，
+	[constraint] [外键名称] foreign key（外键字段名）references 主表（字段名）
+)；</code></pre>
+<pre data-lang="plain"><code>--建完表后，添加外键
+alter table 表名 add constraint 外键名称 foreign key（外键字段名）references 主表（字段名）；</code></pre>
+<pre data-lang="plain"><code>alter table emp add constraint fk_emp_dept_id foreign key (dept_id) references dept(id);</code></pre>
+<p>缺点：影响怎删改的效率， 仅用于单节点数据库 不适用于分布式 集群场景 容易引发数据库死锁问题 消耗性能</p>
+<p>逻辑外键：在业务层逻辑中解决外键关联 通过逻辑外键 就可以很方便的解决以上缺点。</p>
+<h5>一对一</h5>
+<p>案例：用户和身份证信息</p>
+<p>关系：多用于单表拆分 将一张表的基础字段放在一张表中 其他字段放在另一张表中 亿提升效率</p>
+<p>实现：在任意一方添加外键 关联另外一方的主键 设置外键为唯一的</p>
+<h5>多对多</h5>
+<p>案例：学生和课程的关系</p>
+<p>关系：一个学生可以选修多个课程 一门课程也可以供多个学生选择</p>
+<p>实现：建立第三张中间表 中间表至少包括两个外键 分别关联两方主键	</p>
+<h4>多表查询</h4>
+<p>从多张表中进行查询</p>
+<p>select * from emp, dept where emp.dept_id = dept.id;</p>
+<h5>内连接</h5>
+<pre data-lang="plain"><code>-- 隐式内连接（常见）
+select  字段列表 from 表1, 表2 where 连接条件；
+
+-- 显示内连接
+select 字段列表 from 表1 [inner] join 表2 on 连接条件...;</code></pre>
+<pre data-lang="plain"><code>select emp.id, emp.name, dept.name from emp, dept where emp.dept_id = dept.id;
+
+select emp.id, emp.name, dept.name from emp inner join dept on emp.dept_id = dept.id</code></pre>
+<h5>外连接</h5>
+<pre data-lang="plain"><code>--1.左外连接
+select 字段列表 from 表1 left [outer] join 表2 on 连接条件。.。
+--2.右外连接
+select 字段列表 from 表1 right [outer］join 表2 on 连接条件</code></pre>
+<h5>子查询</h5>
+<p>介绍：SQL语句中嵌套select语句，称为嵌套查询，又称子查询。形式: select * from tl where columnl = (select columnl from t2 .);</p>
+<p>说明：子查询外部的语句可以是insert／ update／delete／ select 的任何一个，最常见的是 select。分类：1。标量子查询：子查询返回的结果为单个值2。列子查询：子查询返回的结果为一列3。行子查询：子查询返回的结果为一行4。表子查询：子查询返回的结果为多行多列</p>
+<h2>JDBC</h2>
+<p>是使用java操作关系型数据库的一套API</p>
+<pre data-lang="plain"><code>//1.注册驱动
+Class.forName("com.mysql.cj.jdbc.Driver");
+//2.获取连接
+Stringurl="jdbc:mysql://localhost:3306/web01";
+String username ="root";
+String password ="1234";
+Connection connection =DriverManager.getConnection(url，username,password);
+//3.获取SQL语句执行对象
+Statement statement=connection.createStatement()；
+//4.执行SQL
+int i=statement.executeUpdate("update user set age =25 where id=1");
+//5.释放资源
+statement.close();
+connection.close();</code></pre>
+<pre data-lang="plain"><code>package com.kaninbk;
+
+import com.mysql.cj.jdbc.Driver;
+import org.junit.jupiter.api.Test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class JdbcTest {
+
+    @Test
+    public void testUpdata() throws ClassNotFoundException, SQLException {
+        //1.注册驱动
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        //2.获取数据库的链接
+        String url = "jdbc:mysql://localhost:3306/web01";
+        String username = "root";
+        String password = "1234";
+        Connection connection = DriverManager.getConnection(url, username, password);
+
+        //3.获取SQL语句的执行对象
+        Statement statement = connection.createStatement();
+        //4.执行SQL
+        int i = statement.executeUpdate("update user set age = 25 where id = 1");
+        System.out.println("影响的记录数为：" + i);
+        //5.释放资源
+        connection.close();
+        statement.close();
+    }
+}</code></pre>
+<h3>查询数据</h3>
+<p>需求：基于JDBC执行如下select语句，将查询结果封装到User对象中。（AI辅助）SQL: select * from user where username = 'daqiao' and password ='123456'ResultSet（结果集对象）：ResultSet rs= statement.executeQuery(）next（）：将光标从当前位置向前移动一行，并判断当前行是否为有效行，返回值为boolean。true：有效行，当前行有数据false：无效行，当前行没有数据getXxx（..）：获取数据，可以根据列的编号获取，也可以根据列名获取（推荐）。</p>
+<pre data-lang="java"><code>package com.kaninbk;
+
+import com.kaninbk.pojo.User;
+import com.mysql.cj.jdbc.Driver;
+import org.junit.jupiter.api.Test;
+
+import java.sql.*;
+import java.util.ArrayList;
+
+public class JdbcTest {
+
+    @Test
+    public void testUpdata() throws ClassNotFoundException, SQLException {
+        //1.注册驱动
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        //2.获取数据库的链接
+        String url = "jdbc:mysql://localhost:3306/web01";
+        String username = "root";
+        String password = "1234";
+        Connection connection = DriverManager.getConnection(url, username, password);
+
+        //3.获取SQL语句的执行对象
+        Statement statement = connection.createStatement();
+        //4.执行SQL
+        //int i = statement.executeUpdate("update user set age = 25 where id = 1");
+        //System.out.println("影响的记录数为：" + i);
+        ResultSet resultSet = statement.executeQuery("select * from user;");
+        ArrayList&lt;User&gt; list = new ArrayList&lt;&gt;();
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("username");
+            String pwd = resultSet.getString("password");
+            String name2 = resultSet.getString("name");
+            int age = resultSet.getInt("age");
+            list.add(new User(id, username, pwd, name2, age));
+
+        }
+        for (User user : list) {
+            System.out.println(user.toString());
+        }
+
+        //5.释放资源
+        connection.close();
+        statement.close();
+    }
+}</code></pre>
+<h2>MyBatis</h2>
+<p>是一个优秀的持久层框架 用于简化JDBC的开发</p>
+<p><strong>准备工作：</strong></p>
+<pre data-lang="plain"><code>1．创建SpringBoot工程、引入Mybatis相关依赖
+2．准备数据库表user、实体类User
+3.配置Mybatis（在application.properties中数据库连接信息）</code></pre>
+<pre data-lang="plain"><code>#application.properties 配置数据库连接信息
+spring.datasource.url=jdbc:mysql://localhost:3306/web01
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=1234
+#mybatis的配置
+mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl</code></pre>
+<p>编写MyBatis：编写持久层接口 定义SQD（注解/XML）</p>
+<pre data-lang="plain"><code>@Mapper //应用程序在创建时会自动扫描该接口，并自动创建该接口的实现类对象；并放在IOC容器中
+public interface UserMapper {
+
+    @Select("select * from user")
+    public List&lt;User&gt; findAll();
+}</code></pre>
+<p>测试类：</p>
+<pre data-lang="plain"><code>@SpringBootTest
+class SpringMybatisApplicationTests {
+
+    @Autowired
+    private UserMapper um;
+    @Test
+    void mybatisTest() {
+        List&lt;User&gt; list = um.findAll();
+        for (User user : list) {
+            System.out.println(user);
+        }
+    }
+
+}</code></pre>
+<h3>数据库连接池</h3>
+<p>数据库连接池是个容器 负责分配 管理数据库连接</p>
+<p>它允许一个用程序重复使用一个现有的数据库连接 而不是重新建立一个人</p>
+<p>释放空闲时间超过最大空闲时间的连接 来避免因为没有释放连接而引起的数据库连接遗漏</p>
+<p>标准接口：DataSource官方(sun)提供的数据库连接池接口，由第三方组织实现此接口。功能：获取连接 :</p>
+<p>Connection getConnection() throws SQLException;</p>
+<p>切换数据库连接池：</p>
+<pre data-lang="plain"><code>pom.xml
+&lt;dependency&gt;
+&lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+&lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;
+&lt;version&gt;1.2.19&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<pre data-lang="plain"><code>#application.properties
+spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
+spring.datasource.url=jdbc:mysql://localhost:3306/web
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=1234</code></pre>
+<h3>删除数据</h3>
+<p><strong>mapper接口：</strong></p>
+<pre data-lang="plain"><code>@Delete("delete from user where id = #{id}")
+public void deleteById(Integer id);
+//方法如果由返回值则返回影响的记录数</code></pre>
+<p><strong>测试类：</strong></p>
+<pre data-lang="plain"><code>@SpringBootTest
+class SpringMybatisApplicationTests {
+    @Autowired
+    private UserMapper um;
+    @Test
+    void mybatisTest() {
+        
+        um.deleteById(5);
+    }
+
+}</code></pre>
+<h3>新增数据</h3>
+<pre data-lang="plain"><code>@Insert("insert into user values (#{id}, #{username}, #{password}, #{name}, #{age})")
+    public void save(Integer id, String username, String password, String name, int age);</code></pre>
+<p>我们也可以在接口中传递一个对象</p>
+<pre data-lang="plain"><code>@Insert("insert into user values (#{id}, #{username}, #{password}, #{name}, #{age})")
+public void save1(User user);</code></pre>
+<h3>更新数据</h3>
+<p>同上</p>
+<h3>查询数据</h3>
+<pre data-lang="plain"><code>@Select("select * from user where username = #{username} and password = #{password}")
+public User findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+/*
+使用注解@Param给形参起名字 用来区分sql中的名字 如果项目是基于springBoot创建的则注解可以省略
+*/</code></pre>
+<h3>XML 映射配置</h3>
+<p>在Mybatis中，既可以通过注解配置SQL语句，也可以通过XML配置文件配置SQL语句。默认规则：1。XML映射文件的名称与Mapper接口名称一致，并且将xML映射文件和Mapper接口放置在相同包下（同包同名）。2。XML映射文件的namespace属性为Mapper接口全限定名一致。3。XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致。</p>
+<h3>SpringBoot配置文件</h3>
+<p>SpringBoot项目提供了多种属性配置方式（properties、yaml、yml）。</p>
+<h4>yml配置文件</h4>
+<p>●格式:数值前边必须有空格，作为分隔符n使用缩进表示层级关系，缩进时，不允许使用Tab键，只能用空格（idea中会自动将Tab转换为空格）缩进的空格数目不重要，只要相同层级的元素左侧对齐即可#表示注释，从这个字符一直到行尾，都会被解析器忽略</p>
+<p><strong>定义对象/map</strong></p>
+<pre data-lang="plain"><code>user:
+    name: 张三
+    age: 18
+    password: 123456</code></pre>
+<p><strong>定义list</strong></p>
+<pre data-lang="plain"><code>hobby: 
+    - java
+    - game
+    - sprt</code></pre>
+<p>在yml格式的配置文件中，如果配置项的值是以0开头的，值需要使用用！！引起来，因为以0开头在yml中表示8进制的数据。</p>
+<h2>Tlias智能学习辅助系统 部门管理</h2>
+<h3>准备工作</h3>
+<p><strong>Restful</strong>：表述性状态转换，它是一种软件架构风格。</p>
+<p>URL定位资源</p>
+<p>HTTP动词（请求方式）描述操作</p>
+<p>1．REST是风格，是约定方式，约定不是规定，可以打破。2.描述功能模块通常使用复数形式（加s），表示此类资源，而非单个资源。如：users、books。。</p>
+<h3>工程搭建</h3>
+<p>1。创建SpringBoot工程，并引l入web开发起步依赖、mybatis、mysql驱动、lombok。2．创建数据库表dept，并在application.yml中配置数据库的基本信息。</p>
+<pre data-lang="plain"><code>#配置数据库连接信息
+spring:
+  application:
+    name: tliasWebMaxagement
+  datasource:
+    url: jdbc:mysql://localhost:3306/tlias
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl</code></pre>
+<p>3．准备基础代码结构，并引l入实体类Dept及统一的响应结果封装类Result。</p>
+<p>实体类属性名和数据库表查询返回的字段名一致，mybatis会自动封装。如果实体类属性名和数据库表查询返回的字段名不一致，不能自动封装。</p>
+<p>但是可以通过一下方式进行手动封装：</p>
+<pre data-lang="plain"><code>@Results({
+            @Result(column = "create_time", property = "createTime"),
+            @Result(column = "update_time", property = "updateTime")
+    })
+
+//其中column表示数据库中的字段， property表示bean类中的字段</code></pre>
+<p>也可以通过在SQL中起别名的方式将数据库字段名改为 bean中的字段名即可。</p>
+<p>或者开启驼峰命名 如果字段名与属性名古河驼峰命名规则 mybatis会自动通过驼峰命名规则进行映射</p>
+<pre data-lang="plain"><code>mybatis:
+  configuration:
+  #开启了驼峰命名映射开关
+    map-underscore-to-camel-case: true</code></pre>
+<p>-</p>
+<h4>反向代理：</h4>
+<p>反向代理是一种网络架构（安全、灵活、负载均衡） 客户端直接访问代理服务器 转发给后端服务器</p>
+<p>反向代理配置：</p>
+<pre data-lang="plain"><code>server {
+        listen       90;  //监听端口
+        server_name  localhost;
+        client_max_body_size 10m;
+        
+        location / {   //用于定义匹配路径的规则
+            root   html;
+            index  index.html index.htm;
+            try_files $uri $uri/ /index.html;
+        }
+
+        location ^~ /api/ {     //表示精准匹配 即只匹配/api/开头的路径
+            rewrite ^/api/(.*)$ /$1 break;      //重写匹配到的路径
+            proxy_pass http://localhost:8080;   //用于代理转发 将匹配到的请求转发给位于后端的指令服务器
+        }
+        
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }</code></pre>
+<h3>删除数据</h3>
+<h4>Controller接收数据</h4>
+<p>方式1：通过原始的HttoServletRequest对象接受请求参数。(不推荐)</p>
+<pre data-lang="plain"><code>@DeleteMapping("/depts")
+    public Result delete(HttpServletRequest request) {
+        String idStr = request.getParameter("id");
+        int id = Integer.parseInt(idStr);
+        System.out.println("删除部门id为：" + id);
+        return Result.success();
+    }</code></pre>
+<p>方式2：通过注解@RequestParam 将请求参数绑定给方法的形参</p>
+<pre data-lang="plain"><code>@DeleteMapping("/depts")
+    public Result delete(@RequestParam("id") Integer id) {
+        System.out.println("删除部门：" + id);
+        return Result.success();
+    }</code></pre>
+<p>注意事项：如果声明了@RequestParam注解 在传递参数时必须传递请求参数 如果不传递将会保错。</p>
+<p>可以主动的将required设置为false</p>
+<p>如果请求的参数名与形参参数名相同可以省略@RequestParam注解 直接定义方法形参即可</p>
+<pre data-lang="plain"><code>@DeleteMapping("/depts")
+    public Result delete(Integer id) {
+        System.out.println("删除部门：" + id);
+        return Result.success();
+    }</code></pre>
+<h4>具体实现</h4>
+<pre data-lang="plain"><code>//mapper
+@Delete("delete from dept where id = #{id}")
+    public void deleteById(Integer id);
+//service
+@Override
+    public void deleteById(Integer id) {
+        deptMapper.deleteById(id);
+    }
+//controller
+@DeleteMapping("/depts")
+    public Result delete(Integer id) {
+        System.out.println("删除部门：" + id);
+        deptService.deleteById(id);
+        return Result.success();
+    }</code></pre>
+<h3>新增部门</h3>
+<h4>接收JSON数据参数</h4>
+<p>JSON格式的参数，通常会使用一个实体对象进行接收规则：JSON数据的键名与方法形参对象的属性名相同，并需要使用@RequestBody注解标识。</p>
+<p>public Result add(@RequestBody Dept dept){}</p>
+<h4>具体实现</h4>
+<pre data-lang="plain"><code>//controller
+@PostMapping("/depts")
+    public Result add(@RequestBody Dept dept) {
+        System.out.println("新增部门：" + dept.getName());
+        deptService.add(dept);
+        return Result.success();
+    }
+//service
+@Override
+    public void add(Dept dept) {
+        // 补全属性值
+        dept.setCreateTime(LocalDateTime.now());
+        dept.setUpdateTime(LocalDateTime.now());
+        deptMapper.add(dept);
+    }
+//mapper
+@Insert("insert into dept(name, create_time, update_time) values(#{name}, #{createTime}, #{updateTime})")
+    public void add(Dept dept);</code></pre>
+<h3>修改部门</h3>
+<h4>查询回显</h4>
+<p>路径参数：通过请求URL直接传递参数，使用{..}来标识该路径参数，需要使用@PathVariable获取路径参数</p>
+<pre data-lang="plain"><code>@GetMapping("/depts/{id}")
+    public Result findById(@PathVariable("id") Integer id) {
+        System.out.println("根据id查询部门：" + id);
+        return Result.success();
+    }</code></pre>
+<p>如果形参的名称和路径参数的属性名一致的话可以省略@PathVariable中的参数</p>
+<pre data-lang="plain"><code>//controller
+@GetMapping("/depts/{id}")
+    public Result getInfo(@PathVariable Integer id) {
+        System.out.println("根据id查询部门：" + id);
+        Dept dept = deptService.getById(id);
+        return Result.success(dept);
+    }
+//service
+ @Override
+    public Dept getById(Integer id) {
+        return deptMapper.getById(id);
+    }
+//mapper
+@Select("select id, name, create_time, update_time from dept where id = #{id}")
+    Dept getById(Integer id);</code></pre>
+<h4>修改数据</h4>
+<pre data-lang="plain"><code>//controller
+@PutMapping("/depts")
+    public Result update(@RequestBody Dept dept) {
+        System.out.println("修改部门：" + dept.getName());
+        deptService.update(dept);
+        return Result.success();
+    }
+//service
+@Override
+    public void update(Dept dept) {
+        //补全参数
+        dept.setUpdateTime(LocalDateTime.now());
+        deptMapper.update(dept);
+    }
+//mapper
+@Update("update dept set name = #{name}, update_time = #{updateTime} where id = #{id}")
+    void update(Dept dept);</code></pre>
+<h3>备注</h3>
+<p>如果controller中所有的路径一致的话可以在类上添加注释@RequestMapping ("depts") 将方法上面的路径抽取到类上</p>
+<h2>日志技术 logback</h2>
+<p>程序中的日志是用来记录应用程序的运行信息、状态信息、错误信息等。</p>
+<p>JUL：这是JaVaSE平台提供的官方日志框架，也被称为JUL。配置相对简单，但不够灵活，性能较差。</p>
+<p>Log4j：一个流行的日志框架，提供了灵活的配置选项，支持多种输出目标。</p>
+<p>Logback：基于Log4j升级而来，提供了更多的功能和配置选项，性能优于Log4j。</p>
+<p>Slf4j（SimpleLoggingFacadeforJava）：简单日志门面，提供了一套日志操作的标准接口及抽象类，允许应用程序使用不同的底层日志框架。</p>
+<h3>使用</h3>
+<p>准备工作：引入logback的依赖（springboot项目中该依赖已传递）、配置文件logback.xml。记录日志：定义日志记录对象Logger，记录日志。</p>
+<p>如果引入了lombok的话可以不用定义对象 直接添加注解<strong>@Slf4j</strong>即可</p>
+<pre data-lang="plain"><code>private staticfinal Loggerrlog=LoggerFactory.getLogger(LogTest.class);
+@Test
+publicvoid testLog(){
+    log.debug（"开始计算..."）;
+    int sum =0；
+    int[] nums ={1，5，3，2，1，4，5，4，6，7，4，34，2，23};
+    for（inti=0;i&lt;=nums.length;i++）{
+    sum += nums[i];
+
+    log.info（"计算结果为："+sum）;
+    log.debug（"结束计算..."）;
+}</code></pre>
+<h3>配置文件</h3>
+<p>配置文件名：logback.xml该配置文件是对Logback日志框架输出的日志进行控制的，可以来配置输出的格式、位置及日志开关等。常用的两种输出日志的位置：控制台、系统文件</p>
+<pre data-lang="plain"><code>&lt;！--控制台输出
+&lt;appender name="sTDouT" class="ch.qos.logback.core.ConsoleAppender"&gt;...&lt;/appender&gt;</code></pre>
+<pre data-lang="plain"><code>系统文件输出
+&lt;appender name="FILE""class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;...&lt;/appender&gt;</code></pre>
+<h3>日志级别</h3>
+<p>指的是日志信息的类型 </p>
+<p>在调用方法是可以使用占位符{} 替代+</p>
+<p>log.info("新增部门：{}", dept);</p>
+<h2>Tlias智能学习辅助系统 员工管理</h2>
+<h3>PageHelper</h3>
+<p>是一个第三方的在MyBatis中实现分页的插件 用来简化分页操作 提高开发效率。</p>
+<pre data-lang="plain"><code>//原始方法 mapper
+@Select("select emp.*, dept.name as deptName from emp left join dept on emp.dept_id = dept.id order by emp.update_time desc limit #{start}, #{pageSize}")
+List&lt;Emp&gt; list(Integer start, Integer pageSize);
+//service
+    @Override
+    public PageResult&lt;Emp&gt; page(Integer page, Integer pageSize) {
+        long c = empMapper.count();
+        List&lt;Emp&gt; empList = empMapper.list((page - 1) * pageSize, pageSize);
+        return new PageResult&lt;&gt;(c, empList);
+    }</code></pre>
+<p>使用PageHelper在mapper层只需要定义sql语句即可</p>
+<p>分页相关的操作在Service层定义Pagehelper.startPage(page, pageSize)即可</p>
+<pre data-lang="plain"><code>//PageHelper Mapper
+@Select("select e.* from emp e...")
+public List&lt;Emp&gt; list();
+
+//service
+@Override
+    public PageResult&lt;Emp&gt; page(Integer page, Integer pageSize) {
+        Pagehelper.startPage(page, pageSize)
+        List&lt;Emp&gt; empList = empMapper.list();
+        return new PageResult&lt;&gt;(c, empList);
+    }</code></pre>
+<h4>使用步骤</h4>
+<p>1.引入PageHelper插件</p>
+<pre data-lang="plain"><code>&lt;!--分页插件PageHeLper
+&lt;dependency&gt;
+    &lt;groupId&gt;com.github.pagehelper&lt;{groupId&gt;
+    &lt;artifactId&gt;pagehelper-spring-boot-starter&lt;/artifactId&gt;
+    &lt;version&gt;1.4.7&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<p>2.定义Mapper接口的查询方法（无需考虑分页）</p>
+<pre data-lang="plain"><code>@Select("select e.* from emp e...")
+public List&lt;Emp&gt; list();</code></pre>
+<p>3.在Service方法中实现分页查询</p>
+<pre data-lang="plain"><code>public PageResult&lt;Emp&gt; page(Integer page, Integer pageSize) {
+        /*long c = empMapper.count();
+        List&lt;Emp&gt; empList = empMapper.list((page - 1) * pageSize, pageSize);
+        return new PageResult&lt;&gt;(c, empList);*/
+        //设置分页参数
+        PageHelper.startPage(page, pageSize);
+        //执行查询
+        Page&lt;Emp&gt; p = (Page&lt;Emp&gt;)empMapper.list();
+        //解析查询结果 并封装数据
+        return new PageResult&lt;Emp&gt;(p.getTotal(), p.getResult());
+
+    }
+//或者可以一下写法
+   @Override
+    public PageResult&lt;Emp&gt; page(Integer page, Integer pageSize) {
+        /*long c = empMapper.count();
+        List&lt;Emp&gt; empList = empMapper.list((page - 1) * pageSize, pageSize);
+        return new PageResult&lt;&gt;(c, empList);*/
+        //设置分页参数
+        Page&lt;Emp&gt; p = PageHelper.startPage(page, pageSize);
+        //执行查询
+        empMapper.list();
+        //解析查询结果 并封装数据
+        return new PageResult&lt;Emp&gt;(p.getTotal(), p.getResult());
+
+    }
+}</code></pre>
+<h4>注意事项</h4>
+<p>定义的sql语句结尾不能加；</p>
+<p>仅仅只对后面的第一个查询操作起作用 </p>
+<p>我们可以在sql中使用concat对字符串进行拼接</p>
+<p>可以使用@Options(useGeneratedKeys = true, keyProperty = "id") 让主键保存在对象的id中</p>
+<h3>优化</h3>
+<p>如果传递的参数比较多 我们可以吧参数封装到一个对象中</p>
+<h4>动态sql</h4>
+<p>随着用户的输入或者外部调教的变化而变化的sql语句 就是动态sql</p>
+<p><if>:判断条件是否成立 如果条件为true则拼接sql</p>
+<pre data-lang="plain"><code>&lt;if test = "gender != null"&gt;
+    and e.gender = #{gender}
+&lt;/if&gt;</code></pre>
+<p><where> 根据查询条件 生成where关键字 自动去除条件天面的and或or</p>
+<pre data-lang="plain"><code>&lt;select id="list" resultType="com.kaninbk.pojo.Emp"&gt;
+        select emp.*, dept.name as deptName from emp left join dept on emp.dept_id = dept.id
+            &lt;where&gt;
+                &lt;if test = "name != null and name != ''"&gt;
+                    emp.name like concat('%', #{name}, '%')
+                &lt;/if&gt;
+                &lt;if test = "gender!= null"&gt;
+                    and emp.gender = #{gender}
+                &lt;/if&gt;
+                &lt;if test = "begin!= null and end != null"&gt;
+                    and emp.entry_date between #{begin} and #{end}
+                &lt;/if&gt;
+
+            &lt;/where&gt; order by emp.update_time desc
+
+    &lt;/select&gt;</code></pre>
+<h5>批量保存工作经历</h5>
+<p><foreach></p>
+<p><foreach>属性说明：T.collection：集合名称2．item：集合遍历出来的元素/项3．separator：每一次遍历使用的分隔符4.open:遍历开始前拼接的片段5．close：遍历结束后拼接的片段</p>
+<pre data-lang="plain"><code>&lt;mapper namespace = "com.kaninbk.mapper.EmpExprMapper"&gt;
+    &lt;insert id="saveBach"&gt;
+        insert into emp_expr(emp_id, begin, end, company, job) values
+        &lt;foreach collection="exprList" item = "expr" separator=","&gt;
+            (#{expr.empId}, #{expr.begin}, #{expr.end}, #{expr.company}, #{expr.job})
+        &lt;/foreach&gt;
+    &lt;/insert&gt;
+
+&lt;/mapper&gt;</code></pre>
+<h2>事务</h2>
+<p>概念：事务是一组操作的集合，它是一个不可分割的工作单位。事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，即这些操作要么同时成功，要么同时失败。</p>
+<p>MySql默认的事务是自动提交的 也急速hi说 当执行一条DML语句 会立即隐式的提交事务</p>
+<h3>操作</h3>
+<p>事务控制主要三步操作：开启事务 提交事务/回滚事务</p>
+<pre data-lang="plain"><code>--开启事务
+start transaction; / begin
+--1.保存员工基本信息
+insert into emp values（39，‘Tom’，‘123456'，‘汤姆’，1，‘13300001111′，1，4000，‘1.jpg'，‘2023-11-01'，1，now（)，now(））;
+--2.保存员工工作经历
+insert into emp_expr(emp_id, begin, end, company, job) values(....)
+
+--提交事务（全部成功）/回滚事务（有一个失败）
+commit/rollback</code></pre>
+<h3>Spring事务管理</h3>
+<p>注解:@Transactional作用：将当前方法交给spring进行事务管理，方法执行前，开启事务；成功执行完毕，提交事务；出现异常，回滚事务位置：业务（service）层的方法（推荐）上、类上、接口上</p>
+<p>rollbackFor属性用于控制出现何种异常类型，回滚事务。</p>
+<p>Transactional默认只有出现运行RuntimeException时异常才会回滚</p>
+<p>如果想要出现所有的异常都回滚 要声明@Transactional(rollbackFor = {Exception.class})即可</p>
+<p>注解：@propagation</p>
+<p>事务传播行为：指的就是当一个事务方法被另一个事务方法调用时这个事务方法应该如何进行事务控制	</p>
+<p>属性值:</p>
+<pre data-lang="plain"><code>REQUIRED【默认值】需要事务，有则加入，无则创建新事务
+REQUIRES_NEW需要新事务，无论有无，总是创建新事务
+SUPPORTS支持事务，有则加入，无则在无事务状态中运行
+NOT_SUPPORTED不支持事务，在无事务状态下运行，如果当前存在已有事务，则挂起当前事务
+MANDATORY必须有事务，否则抛异常
+NEVER必须没事务，否则抛异常</code></pre>
+<h2>文件上传</h2>
+<p>文件上传：是指将本地图片、视频、音频等文件上传到服务器，供其他用户浏览或下载的过程。文件上传在项目中应用非常广泛，我们经常发微博、发微信朋友圈都用到了文件上传功能。</p>
+<p>前端文件上传时必须使用POST不能使用GET</p>
+<p>服务器端在接收是需要在方法的形参中定义 一个multipartFile用来接受前端传递过来的文件</p>
+<pre data-lang="plain"><code>@PostMapping("/upload")
+    public Result upload(String name, Integer age, MultipartFile file) throws Exception {
+        log.info("文件上传");
+        //获取文件名
+        String originalFilename = file.getOriginalFilename();
+        //新的文件名
+        String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
+        String newFileName = UUID.randomUUID().toString() + extension;//使用UUID唯一区分每一个文件
+        //保存文件
+        file.transferTo(new File("E:\\project\\tliasProject\\tliasWebMaxagement\\image\\" + newFileName));
+
+        return Result.success();
+    }</code></pre>
+<p>SpringBoot默认上传文件大小限制为1m 可以通过配置一下配置项解决：</p>
+<p>spring.servlet.multipart.max-file-size</p>
+<h3>阿里云OSS</h3>
+<p>阿里云对象存储OsS（QbjectStorageService），是一款海量、安全、低成本、高可靠的云存储服务。使用OSS您可以通过网络随时存储和调用包括文本、图片、音频和视频等在内的各种文件。</p>
+<p>上传文件示例代码：</p>
+<pre data-lang="plain"><code>package com.kaninbk;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.util.Random;
+
+import com.aliyun.oss.*;
+import com.aliyun.oss.common.auth.CredentialsProviderFactory;
+import com.aliyun.oss.common.auth.EnvironmentVariableCredentialsProvider;
+import com.aliyun.oss.model.OSSObject;
+import com.aliyun.oss.model.ObjectListing;
+import com.aliyun.oss.model.OSSObjectSummary;
+import com.aliyun.oss.common.auth.*;
+import com.aliyun.oss.common.comm.SignVersion;
+
+public class OssJavaSdkQuickStart {
+    /** 生成一个唯一的 Bucket 名称 */
+    public static String generateUniqueBucketName(String prefix) {
+        // 获取当前时间戳
+        String timestamp = String.valueOf(System.currentTimeMillis());
+        // 生成一个 0 到 9999 之间的随机数
+        Random random = new Random();
+        int randomNum = random.nextInt(10000); // 生成一个 0 到 9999 之间的随机数
+        // 连接以形成一个唯一的 Bucket 名称
+        return prefix + "-" + timestamp + "-" + randomNum;
+    }
+
+    public static void main(String[] args) throws com.aliyuncs.exceptions.ClientException {
+        // 设置 OSS Endpoint 和 Bucket 名称
+        String endpoint = "https://oss-cn-beijing.aliyuncs.com";
+        //String bucketName = generateUniqueBucketName("tlias-ai-std");
+        String bucketName = "tlias-ai-std";
+        // 替换为您的 Bucket 区域
+        String region = "cn-beijing";
+        
+        // 从环境变量中获取访问凭证。运行本代码示例之前，请先配置环境变量
+        EnvironmentVariableCredentialsProvider credentialsProvider =
+                CredentialsProviderFactory.newEnvironmentVariableCredentialsProvider();
+                
+        // 创建 OSSClient 实例
+        ClientBuilderConfiguration clientBuilderConfiguration = new ClientBuilderConfiguration();
+        // 显式声明使用 V4 签名算法
+        clientBuilderConfiguration.setSignatureVersion(SignVersion.V4);
+        OSS ossClient = OSSClientBuilder.create()
+                .endpoint(endpoint)
+                .credentialsProvider(credentialsProvider)
+                .region(region)
+                .build();
+
+        try {
+            // 1. 创建存储空间（Bucket）
+            ossClient.createBucket(bucketName);
+            System.out.println("1. Bucket " + bucketName + " 创建成功。");
+            // 2. 上传文件
+            String objectName = "001.md";
+
+            File file = new File("E:\\project\\tliasProject\\tliasWebMaxagement\\doc\\key.md");
+            byte[] content = Files.readAllBytes(file.toPath());
+
+            ossClient.putObject(bucketName, objectName, new ByteArrayInputStream(content));
+            System.out.println("2. 文件 " + objectName + " 上传成功。");
+            
+        } catch (OSSException oe) {
+            System.out.println("Caught an OSSException, which means your request made it to OSS, "
+                    + "but was rejected with an error response for some reason.");
+            System.out.println("Error Message:" + oe.getErrorMessage());
+            System.out.println("Error Code:" + oe.getErrorCode());
+            System.out.println("Request ID:" + oe.getRequestId());
+            System.out.println("Host ID:" + oe.getHostId());
+        } catch (ClientException | IOException ce) {
+            System.out.println("Caught an ClientException, which means the client encountered "
+                    + "a serious internal problem while trying to communicate with OSS, "
+                    + "such as not being able to access the network.");
+            System.out.println("Error Message:" + ce.getMessage());
+        } finally {
+            if (ossClient != null) {
+                ossClient.shutdown();
+            }
+        }
+    }
+}</code></pre>
+<p>我们可以在项目中引入OSS的工具类直接调用工具类 中的uplload方法即可</p>
+<p>最新的oss不能直接靠拼接获取图片的连接但是可以通过以下方式获取一个有时间限制的链接：</p>
+<pre data-lang="plain"><code>private String getObjectUrl(String objectName, OSS ossClient) {
+        URL url = ossClient.generatePresignedUrl(bucketName, objectName, new Date(new Date().getTime() + 3600 * 1000L));
+        return url.toString();
+
+    }</code></pre>
+<h3>参数配置化</h3>
+<p>将一些需要变动的参数 配置在文件中通过@Value注解注入外部配置的属性</p>
+<pre data-lang="plain"><code>aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucketName: tlias-ai-std
+    region: cn-beijing</code></pre>
+<pre data-lang="plain"><code>@Value("${aliyun.oss.endpoint}")
+    private String endpoint;
+    @Value("${aliyun.oss.bucketName}")
+    private String bucketName;
+    @Value("${aliyun.oss.region}")
+    private String region;</code></pre>
+<p>但是使用@Value注解注入配置文件的配置项，女如果配置项多，注入繁琐，不便于维护管理和复用。</p>
+<p>可以使用@ConfigurationProperties实现批量注入 将配置项封装到实体类中 实体类中的字段名要和yml中的配置项名字相同 将这个实体类交给IOC容器管理</p>
+<pre data-lang="plain"><code>//pojo实体类
+@Data
+@Component
+@ConfigurationProperties(prefix = "aliyun.oss")
+public class AliyunOSSProperties {
+    private String endpoint;
+    private String bucketName;
+    private String region;
+}</code></pre>
+<h2>删除员工信息</h2>
+<h3>服务器接受前端发送过来的数组</h3>
+<p>可以直接在形参中定义一个数组</p>
+<pre data-lang="plain"><code>@DeleteMapping
+    public Result delete(Integer[] ids) {
+        log.info("批量删除{}", Arrays.toString(ids));
+
+        return Result.success();
+    }</code></pre>
+<p>也可以直接封装到一个集合中 但是必须添加注解@RequestParam</p>
+<pre data-lang="plain"><code>@DeleteMapping
+    public Result delete(@RequestParam List&lt;Integer&gt; ids) {
+        log.info("批量删除{}", Arrays.toString(ids));
+
+        return Result.success();
+    }</code></pre>
+<h2>异常处理</h2>
+<p>我们可以使用全局异常处理器 来处理异常</p>
+<pre data-lang="plain"><code>@Slf4j
+@RestControllerAdvice
+public class GlobalExceptionHandle {
+    @ExceptionHandler
+    public Result handleException(Exception e) {
+        log.error("全局异常处理器， 异常信息：", e);
+        return Result.error("对不起，服务器异常请稍后再试 或者联系管理员：19819102162");
+    }
+}</code></pre>
+<h2>员工信息统计</h2>
+<p>前段的信息统计使用的是百度提供的Echarts</p>
+<p>我们可以使用SQL中的流程控制函数CASE将job字段的数字转化成职位名称</p>
+<pre data-lang="plain"><code>SELECT
+    (CASE job
+        WHEN 1 THEN '班主任'
+        WHEN 2 THEN '讲师'
+        WHEN 3 THEN '学工主管'
+        WHEN 4 THEN '教研主任'
+        WHEN 5 THEN '咨询师'
+        ELSE '其他'
+        END) as pos,
+    COUNT(*) as num
+FROM
+    emp
+GROUP BY
+    job
+order by num;</code></pre>
+<p>也可以省略CASE后面的字段名 在WHEN后面直接写条件 可以使用条件控制 </p>
+<h2>登录认证</h2>
+<h3>会话技术</h3>
+<p>登录标记：用户登陆成功之后 在后续的每一次请求中 都可以获取该标记【会话技术】</p>
+<p>统一拦截：过滤器Filter、拦截器Interceptor</p>
+<p>会话：用户打开浏览器，访问web服务器的资源，会话建立，直到有一方断开连接，会话结束。在一次会话中可以包含多次请求和响应。</p>
+<p>会话跟踪：一种维护浏览器状态的方法，服务器需要识别多次请求是否来自于同一浏览器，以便在同一次会话的多次请求间共享数据。</p>
+<p>会话跟踪方案：	客户端会话跟踪技术：Cookie	服务端会话跟踪技术：Session	令牌技术</p>
+<h4>Cookie</h4>
+<p>优点：HTTP支持的技术</p>
+<p>缺点：</p>
+<p>	移动端App无法使用</p>
+<p>	不安全 用户可以自己禁用</p>
+<p>	Cookie不能跨域</p>
+<h4>Session</h4>
+<p>优点：存储在服务器 安全</p>
+<p>缺点：</p>
+<p>	服务器集群环境下无法直接使用Session</p>
+<p>	Cookie的所有缺点因为底层是基于Cookie的</p>
+<h4>令牌方案 （主流方案）</h4>
+<p>相当于用户合法的身份凭证</p>
+<p>优点：</p>
+<p>	支持PC端、移动端</p>
+<p>	解决集群环境下的认证问题</p>
+<p>	减轻服务端的压力</p>
+<p>缺点：</p>
+<p>	需要程序员自己实现 编码繁琐</p>
+<h4>JWT令牌</h4>
+<p>JSON Web Token 定义了一种简介的 自包含的格式，用于在通信双方以json数据格式安全的传输信息。</p>
+<p>组成：</p>
+<p>	1.Header（头），记录令牌类型 签名算法等</p>
+<p>	2.Payload（有效载荷），携带一些自定义信息 默认信息的</p>
+<p>	3.Signatureignature（签名），防止Token被篡改、确保安全性。将header、payload融入，并加入指定秘钥，通过指定签名算法计算而来</p>
+<p>使用Base64进行编码</p>
+<p>注意：签名部分不是基于Base64 而是基于一种签名算法</p>
+<p>令牌的长度不是固定的 长度是根据内容的长度决定的</p>
+<h5>生成或解析令牌</h5>
+<p>1.引入jjwt依赖</p>
+<p>2.调用官方工具类Jwts来解析jwt令牌</p>
+<pre data-lang="plain"><code>&lt;dependency&gt;
+            &lt;groupId&gt;io.jsonwebtoken&lt;/groupId&gt;
+            &lt;artifactId&gt;jjwt&lt;/artifactId&gt;
+            &lt;version&gt;0.9.1&lt;/version&gt;
+        &lt;/dependency&gt;</code></pre>
+<p><strong>生成JWT令牌：</strong></p>
+<pre data-lang="plain"><code>@Test
+    public void testGenerateJwt(){
+        Map&lt;String, Object&gt; dataMap = new HashMap();
+        dataMap.put("id", 1);
+        dataMap.put("username", "admin");
+        String compact = Jwts.builder().signWith(SignatureAlgorithm.HS256, "a2FuaW5iaw==")//指定签名算法和签名密钥
+                .addClaims(dataMap)//添加自定义信息
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 3600))//设置过期时间
+                .compact();
+        System.out.println(compact);
+    }</code></pre>
+<p><strong>解析JWT令牌</strong></p>
+<pre data-lang="plain"><code>@Test
+    public void testParseJwt(){
+        String token = "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImV4cCI6MTc0Njc3MTc2NH0.DrLSPOUPMNErij-K2bdNxBJuHJAPeVfKCART1oNwpwA";
+        Claims body = Jwts.parser().setSigningKey("a2FuaW5iaw==")//指定签名密钥
+                .parseClaimsJws(token)//解析token
+                .getBody();//获取token中的自定义信息 生成的Claims本质上就是一个map对象
+        System.out.println(body);
+    }</code></pre>
+<h4>拦截器 Interceptor</h4>
+<p>用于动态拦截控制器方法的执行</p>
+<p>拦截请求执行预先设定的代码</p>
+<p>定义拦截器：</p>
+<pre data-lang="plain"><code>@Component
+@Slf4j
+public class TokenInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        //获取请求路径
+        String requestURI = request.getRequestURI();
+        //判断是否是登录请求 如果是则放行
+        if (requestURI.contains("/login")) {
+            log.info("登录请求 放行");
+            return true;
+        }
+        //判断token是否为空
+        String token = request.getHeader("token");
+        if (token == null || token.isEmpty()) {
+            log.info("令牌为空 响应401");
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return false;
+        }
+
+        //如果token存在 校验令牌 校验失败 返回错误信息
+        try {
+            JwtUtils.parseToken(token);
+        } catch (Exception e) {
+            log.info("令牌非法 响应401");
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return false;
+
+        }
+        log.info("放行！");
+        return true;
+
+    }
+}</code></pre>
+<p>注册拦截器：</p>
+<pre data-lang="plain"><code>@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Autowired
+    private TokenInterceptor tokenInterceptor;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(tokenInterceptor).addPathPatterns("/**");//拦截所有
+    }
+}</code></pre>
+<h2>webSocket</h2>
+<p>是一种基于TCP的全双工通信协议</p>
+<p>首先会使用http协议握手，握手成功后切换成WebSocket协议。</p>
+<p>JavaWebSocket应用由一系列的Endpoint组成。Endpoint是一个java对象，代表WebSocket链接的一端，对于服务端，我们可以视为处理具体WebSocket消息的接口。</p>
+<h4>定义endpoint的两种方式</h4>
+<p>1.变成是，积极成javax.websocket.endpoint并实现其方法。</p>
+<p>2.直接是，即定义一个pojo并添加@ServerEndpoint相关注解	</p>
+<h5>相关方法</h5>
+<p>onOpen() @opOpen	当开启一个新的会话是调用，该方法是客户端与服务器握手成功后调用的 方法</p>
+<p>onClose() @onClose	当会话关闭是调用</p>
+<p>onError() @onError 当链接过程异常是调用</p>
+<pre data-lang="plain"><code>@ServerEnpdpoint("chat")
+@Conmponent
+public class ChatEndpoint {
+    @onOpen
+    public void onOPen(Session session, EndpointConfig config) {
+        
+    }
+    @onMessage
+    public void onMessage(String message) {
+        
+    }
+    @OnClose
+    public void onClose(Session session) {
+        
+    }
+}</code></pre>
+<p>这里面的session指的是websocket会话 不会http会话</p>
+<h4>服务端接受客户端发送的数据</h4>
+<p>编程式：通过添加MessageHandler 消息处理器来接受消息</p>
+<p>注解式：在定义Endpoint时，通过@OnMessage注解指定接受消息的方法</p>
+<h4>服务器如果推送数据给客户端</h4>
+<p>发送消息则由RemoteEndpoint完成，其实例由Sessin维护</p>
+<h5>发送消息的两种方法</h5>
+<p>1.通过session.getBasicRemote获取消息发送的实例，然后调用其sendXxx()方法发送消息</p>
+<p>2.通过sesion.getAsyncRemote获取一部消息发送实例，然后调用其sendXxx()发送消息</p>
+
+  </div>
+</article>
+
+<footer class="footer">
+  <p>© 2026 KANIN · 用心折腾，用力生活</p>
+  <p class="footer-sub"><a href="../index.html#blog" style="color:var(--c2)">← 看看其他文章</a></p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
