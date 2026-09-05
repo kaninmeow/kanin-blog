@@ -217,6 +217,7 @@ function pageHtml(p) {
   <a href="../index.html" class="logo" data-magnetic data-label="回首页">KA<span>N</span>IN</a>
   <div class="nav-links">
     <a href="../index.html#blog" data-magnetic data-label="文章">文章</a>
+    <a href="../index.html#friends" data-magnetic data-label="友链">友链</a>
     <a href="../index.html#links" data-magnetic data-label="联系">联系</a>
   </div>
 </nav>

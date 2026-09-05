@@ -176,6 +176,14 @@ button.link-card{width:100%;border:1px solid var(--line)}
 .link-arrow{margin-left:auto;font-size:1.4rem;color:var(--muted);transition:transform .3s var(--ease),color .3s}
 .link-card:hover .link-arrow{transform:translate(4px,-4px);color:var(--c2)}
 
+/* ===== 友情链接 ===== */
+.friend-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.friend-card{display:flex;align-items:center;gap:18px;padding:24px 26px;text-align:left;font-family:inherit;font-size:inherit;color:inherit}
+.friend-icon{width:52px;height:52px;flex-shrink:0;display:grid;place-items:center;border-radius:14px;background:rgba(255,255,255,.05);font-size:1.5rem;transition:transform .4s var(--ease)}
+.friend-card:hover .friend-icon{transform:rotate(-8deg) scale(1.08)}
+.friend-meta h3{font-size:1.15rem;font-weight:700}
+.friend-meta p{color:var(--muted);font-size:.9rem}
+
 /* ===== 页脚 ===== */
 .footer{text-align:center;padding:60px 20px 40px;border-top:1px solid var(--line);color:var(--muted)}
 .footer-sub{font-size:.85rem;opacity:.6;margin-top:6px}
@@ -187,7 +195,7 @@ button.link-card{width:100%;border:1px solid var(--line)}
 /* ===== 滚动驱动 · 切换动画（Apple 风） ===== */
 /* 3D 透视容器：子元素才有纵深翻入效果 */
 .hero,.section{perspective:1400px}
-.hero-inner,.section-head,.about-grid,.about-stats,.post-grid,.link-grid{transform-style:preserve-3d}
+.hero-inner,.section-head,.about-grid,.about-stats,.post-grid,.link-grid,.friend-grid{transform-style:preserve-3d}
 /* 由 JS 逐帧驱动 transform/opacity/filter，这里只声明合成层 */
 [data-reveal]{will-change:transform,opacity,filter;backface-visibility:hidden}
 /* 仅在 JS 生效时预隐藏，避免无脚本时内容不可见 */
@@ -202,7 +210,7 @@ html.js-anim [data-reveal]{opacity:0}
 @media (max-width:760px){
   .nav-links{gap:16px}
   .about-grid{grid-template-columns:1fr}
-  .post-grid,.link-grid{grid-template-columns:1fr}
+  .post-grid,.link-grid,.friend-grid{grid-template-columns:1fr}
   .cursor-dot,.cursor-box{display:none}
   body,a,button{cursor:auto}
 }
